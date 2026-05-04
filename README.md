@@ -31,13 +31,17 @@ playwright install chromium
 
 ### Windows
 ```
-python test_automation.py --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 100 --slow-mo-ms 200 --save-every 1 --keep-open
+python test_automation.py --url "https://www.pixelssuite.com/chat-translator" --input-col "Input" --expected-col "Expected output" --actual-col "Actual Output" --status-col "Status" --wait-ms 5000 --type-delay-ms 100 --slow-mo-ms 200 --save-every 1 --keep-open
 ```
 
 ### Mac/Linux
 ```
 python test_automation.py \
   --url "https://www.pixelssuite.com/chat-translator" \
+  --input-col "Input" \
+  --expected-col "Expected output" \
+  --actual-col "Actual Output" \
+  --status-col "Status" \
   --wait-ms 5000 \
   --type-delay-ms 100 \
   --slow-mo-ms 200 \
@@ -50,6 +54,10 @@ python test_automation.py \
 | Argument | Default | Description |
 |---|---|---|
 | --url | pixelssuite URL | Target application URL |
+| --input-col | Auto-detected | Column name for Singlish input |
+| --expected-col | Auto-detected | Column name for expected Sinhala output |
+| --actual-col | Auto-detected | Column name for actual output |
+| --status-col | Auto-detected | Column name for test status |
 | --wait-ms | 5000 | Wait time (ms) after transliteration |
 | --type-delay-ms | 30 | Delay (ms) between keystrokes |
 | --slow-mo-ms | 0 | Slow motion delay for browser actions |
